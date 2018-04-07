@@ -1,0 +1,18 @@
+extends layout.jade
+block content
+    h1 bienvenido usuario  
+    button.btn.btn-primary#demo Mostrar Tabla
+    script
+                |$(document).ready(function () {
+                |    $("#demo").click(function () {
+                |        $.post("http://localhost/prueba/public/home/usuarios", function (externo) {
+                |            $("#mostrar-tabla").html(externo);
+
+                |        })
+
+                |    });
+
+                |})
+
+           
+    #mostrar-tabla
